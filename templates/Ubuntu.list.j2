@@ -1,0 +1,23 @@
+# {{ ansible_managed }}
+
+# Base Repositories
+{% for section in repos_ubuntu_enabled_sections %}
+deb {{ repos_transport_protocol }}://{{ repos_ubuntu_base_host }}/ubuntu/ {{ ansible_lsb.codename }} {{ section }} {% if section == "main" %}restricted{% endif %} 
+{% endfor %}
+
+# Update Repositories
+{% for section in repos_ubuntu_enabled_sections %}
+deb {{ repos_transport_protocol }}://{{ repos_ubuntu_base_host }}/ubuntu/ {{ ansible_lsb.codename }}-updates {{ section }} {% if section == "main" %}restricted{% endif %} 
+{% endfor %}
+
+# Security Repositories
+{% for section in repos_ubuntu_enabled_sections %}
+deb {{ repos_transport_protocol }}://{{ repos_ubuntu_base_host }}/ubuntu {{ ansible_lsb.codename }}-security {{ section }} {% if section == "main" %}restricted{% endif %} 
+{% endfor %}
+
+{% if repos_ubuntu_enable_backports | bool %}
+# Backports Repositories
+{% for section in repos_ubuntu_enabled_sections %}
+deb {{ repos_transport_protocol }}://{{ repos_ubuntu_base_host }}/ubuntu/ {{ ansible_lsb.codename }}-backports {{ section }} {% if section == "main" %}restricted{% endif %} 
+{% endfor %}
+{% endif %}

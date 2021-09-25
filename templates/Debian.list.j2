@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+
+# Base Repo
+deb {{ repos_transport_protocol }}://{{ repos_debian_base_host }}/debian/ {{ ansible_lsb.codename }} main
+
+# Security Updates Repo
+deb {{ repos_transport_protocol }}://{{ repos_debian_security_host }}/debian-security {{ ansible_lsb.codename }}/updates main
+
+# Updates Repo
+deb {{ repos_transport_protocol }}://{{ repos_debian_base_host }}/debian/ {{ ansible_lsb.codename }}-updates main
