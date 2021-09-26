@@ -2,7 +2,4 @@
 repos_debian_base_host: httpredir.debian.org
 repos_debian_security_host: security.debian.org
 
-repos_custom_repository_urls: # Can contain host and port
-  - deb http://repo.cgn.rg.lan:3142/ftp.de.debian.org/debian/ {{ ansible_lsb.codename }} main
-  - deb http://repo.cgn.rg.lan:3142/security.debian.org/debian-security {{ ansible_lsb.codename }}/updates main
-  - deb http://repo.cgn.rg.lan:3142/ftp.de.debian.org/debian/ {{ ansible_lsb.codename }}-updates main
+repos_custom_repository_urls: []

@@ -2,5 +2,5 @@
 repos_ubuntu_base_host: archive.ubuntu.com
 repos_ubuntu_enabled_sections:
   - main
-  - universe
-  - multiverse
+  # - universe
+  # - multiverse
