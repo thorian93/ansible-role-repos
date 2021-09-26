@@ -2,9 +2,9 @@
 
 This role configures package repositories on RHEL/CentOS, Debian/Ubuntu, Fedora and openSUSE servers.
 
-[![Ansible Role: Repos](https://img.shields.io/ansible/role/REPLACEME?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
-[![Ansible Role: Repos](https://img.shields.io/ansible/quality/REPLACEME?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
-[![Ansible Role: Repos](https://img.shields.io/ansible/role/d/REPLACEME?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
+[![Ansible Role: Repos](https://img.shields.io/ansible/role/56361?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
+[![Ansible Role: Repos](https://img.shields.io/ansible/quality/56361?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
+[![Ansible Role: Repos](https://img.shields.io/ansible/role/d/56361?style=flat-square)](https://galaxy.ansible.com/thorian93/repos)
 
 ## Here be Dragons!
 
