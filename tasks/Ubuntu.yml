@@ -13,7 +13,7 @@
     mode: 0644
     owner: root
     group: root
-    backup: yes
+    backup: 'yes'
   when: not repos_custom_repository_urls is defined and repos_custom_repository_urls | length
 
 - name: "Define Custom sources.list Configuration."

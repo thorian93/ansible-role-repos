@@ -9,10 +9,10 @@ repos_stable_os:
 
 repos_transport_protocol: http
 repos_ubuntu_enable_backports: 'false'
-repos_custom_repository_urls: [] # Can contain host and port
-  # - deb https://superrepo.example/foo/ {{ ansible_lsb.codename }} bar
-  # - deb http://apt.cacher.example:3142/ftp.debian.org/debian/ {{ ansible_lsb.codename }} main
+repos_custom_repository_urls: []  # Can contain host and port
+# - deb https://superrepo.example/foo/ {{ ansible_lsb.codename }} bar
+# - deb http://apt.cacher.example:3142/ftp.debian.org/debian/ {{ ansible_lsb.codename }} main
 repos_additional_repository_urls: []
-  # - name: "Supersoft"
-  #   comment: "Super important software"
-  #   url: deb https://supersoft.example/packages/apt stable main
+# - name: "Supersoft"
+#   comment: "Super important software"
+#   url: deb https://supersoft.example/packages/apt stable main
