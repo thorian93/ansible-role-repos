@@ -1,5 +1,5 @@
 ---
-- name: Preflight - Fail if target host is not stable for this Role.
+- name: "Preflight - Fail if target host is not stable for this Role."
   fail:
     msg: "This role is not stable for the target operating system, {{ ansible_distribution }} {{ ansible_distribution_major_version }}."
   when: (ansible_distribution is not defined) or
@@ -11,5 +11,5 @@
   changed_when: 'false'
   failed_when: 'false'
 
-- name: Include Distribution specific Playbook.
+- name: "Include Distribution specific Playbook."
   include_tasks: "{{ ansible_distribution }}.yml"

@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+
+# Custom Repository URLs
+{% for line in repos_custom_repository_urls %}
+{{ line }}
+{% endfor %}

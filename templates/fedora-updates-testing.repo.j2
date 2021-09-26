@@ -1,0 +1,36 @@
+[updates-testing]
+name=Fedora $releasever - $basearch - Test Updates
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/updates/testing/$releasever/Everything/$basearch/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=updates-testing-f$releasever&arch=$basearch
+enabled=0
+countme=1
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[updates-testing-debuginfo]
+name=Fedora $releasever - $basearch - Test Updates Debug
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/updates/testing/$releasever/Everything/$basearch/debug/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=updates-testing-debug-f$releasever&arch=$basearch
+enabled=0
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[updates-testing-source]
+name=Fedora $releasever - Test Updates Source
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/updates/testing/$releasever/Everything/SRPMS/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=updates-testing-source-f$releasever&arch=$basearch
+enabled=0
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False

@@ -1,0 +1,36 @@
+[fedora]
+name=Fedora $releasever - $basearch
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=fedora-$releasever&arch=$basearch
+enabled=1
+countme=1
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[fedora-debuginfo]
+name=Fedora $releasever - $basearch - Debug
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/releases/$releasever/Everything/$basearch/debug/tree/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=fedora-debug-$releasever&arch=$basearch
+enabled=0
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[fedora-source]
+name=Fedora $releasever - Source
+#baseurl={{ repos_transport_protocol }}://{{ repos_fedora_base_host }}/pub/fedora/linux/releases/$releasever/Everything/source/tree/
+metalink={{ repos_transport_protocol }}://{{ repos_fedora_mirrors_host }}/metalink?repo=fedora-source-$releasever&arch=$basearch
+enabled=0
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False

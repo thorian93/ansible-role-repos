@@ -1,0 +1,3 @@
+---
+repos_fedora_base_host: download.fedoraproject.org
+repos_fedora_mirrors_host: mirrors.fedoraproject.org

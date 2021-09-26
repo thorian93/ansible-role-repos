@@ -6,7 +6,7 @@
   when: repos_transport_protocol == "https"
 
 - name: "Update the Configuration Files."
-  become: yes
+  become: 'yes'
   template:
     src: Ubuntu.list.j2
     dest: /etc/apt/sources.list
@@ -43,9 +43,7 @@
   shell: apt-get update
   args:
     executable: /bin/bash
+    warn: 'false'
   register: apt_output
   changed_when: apt_output.rc == "100"
-  ignore_errors: yes
-
-- name: "Print APT Output."
-  debug: var=apt_output.rc
+  ignore_errors: 'yes'
