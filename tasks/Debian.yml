@@ -40,10 +40,7 @@
   loop: "{{ repos_additional_repository_urls }}"
 
 - name: "Verify Changes."
-  ansible.builtin.command: apt-get update
-  args:
-    executable: /bin/bash
-    warn: 'false'
+  ansible.builtin.command: apt-get update  # noqa command-instead-of-module
   register: apt_output
   changed_when: apt_output.rc == "100"
   ignore_errors: true

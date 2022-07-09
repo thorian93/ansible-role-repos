@@ -20,9 +20,6 @@
 
 - name: "Verify Changes."
   ansible.builtin.command: dnf check-update --refresh
-  args:
-    executable: /bin/bash
-    warn: 'false'
   register: dnf_output
   changed_when: dnf_output.rc == "100"
   failed_when: dnf_output.rc == "3" or dnf_output.rc == "200"
