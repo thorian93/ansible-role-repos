@@ -2,13 +2,16 @@
 repos_stable_os:
   - Debian 9
   - Debian 10
-  - Fedora 32
-  - Fedora 33
+  - Debian 11
+  # - Fedora 35
+  # - Fedora 36
   - Ubuntu 18
   - Ubuntu 20
+  - Ubuntu 22
 
 repos_transport_protocol: http
 repos_ubuntu_enable_backports: 'false'
+repos_apt_cacher_url: []
 repos_custom_repository_urls: []  # Can contain host and port
 # - deb https://superrepo.example/foo/ {{ ansible_lsb.codename }} bar
 # - deb http://apt.cacher.example:3142/ftp.debian.org/debian/ {{ ansible_lsb.codename }} main

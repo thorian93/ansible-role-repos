@@ -1,14 +1,14 @@
 ---
 - name: "Update the Configuration Files."
-  become: 'yes'
-  template:
+  become: true
+  ansible.builtin.template:
     src: "{{ item }}.j2"
     dest: "/etc/yum.repos.d/{{ item }}"
     mode: 0644
     owner: root
     group: root
     setype: system_conf_t
-    backup: 'yes'
+    backup: true
   with_items:
     - fedora.repo
     - fedora-updates.repo
@@ -19,7 +19,7 @@
     - fedora-cisco-openh264.repo
 
 - name: "Verify Changes."
-  shell: dnf check-update --refresh
+  ansible.builtin.command: dnf check-update --refresh
   args:
     executable: /bin/bash
     warn: 'false'

@@ -1,49 +1,49 @@
 ---
 - name: "Install Prerequisites."
-  package:
+  ansible.builtin.package:
     name: apt-transport-https
     state: present
   when: repos_transport_protocol == "https"
 
 - name: "Update the Configuration Files."
-  become: 'yes'
-  template:
+  become: true
+  ansible.builtin.template:
     src: Debian.list.j2
     dest: /etc/apt/sources.list
     mode: 0644
     owner: root
     group: root
-    backup: 'yes'
-  when: not repos_custom_repository_urls is defined and repos_custom_repository_urls | length
+    backup: true
+  when: not repos_custom_repository_urls | length
 
 - name: "Define Custom sources.list Configuration."
-  become: 'yes'
-  template:
+  become: true
+  ansible.builtin.template:
     src: custom.list.j2
     dest: /etc/apt/sources.list
     mode: 0644
     owner: root
     group: root
-    backup: 'yes'
-  when: repos_custom_repository_urls is defined and repos_custom_repository_urls | length
+    backup: true
+  when: repos_custom_repository_urls | length
 
 - name: "Define additional sources.d Configuration."
-  become: 'yes'
-  template:
+  become: true
+  ansible.builtin.template:
     src: additional.list.j2
     dest: "/etc/apt/sources.list.d/{{ item.name }}"
     mode: 0644
     owner: root
     group: root
-    backup: 'yes'
+    backup: true
   when: repos_additional_repository_urls | length
   loop: "{{ repos_additional_repository_urls }}"
 
 - name: "Verify Changes."
-  shell: apt-get update
+  ansible.builtin.command: apt-get update
   args:
     executable: /bin/bash
     warn: 'false'
   register: apt_output
   changed_when: apt_output.rc == "100"
-  ignore_errors: 'yes'
+  ignore_errors: true

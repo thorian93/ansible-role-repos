@@ -32,6 +32,10 @@ Configure globally if repositories should be contacted via `http` or `https`.
 
 Enable Ubuntu 'Backports' repository. Default: `false`.
 
+    repos_apt_cacher_url: []
+
+Configure a APT-Cacher instance to use for updates.
+
     repos_custom_repository_urls: [] # Can contain host and port
       # - deb https://superrepo.example/foo/ {{ ansible_lsb.codename }} bar
       # - deb http://apt.cacher.example:3142/ftp.debian.org/debian/ {{ ansible_lsb.codename }} main
